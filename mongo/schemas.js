@@ -6,7 +6,7 @@ const Vehicle = new Schema({
   make: String,
   model: String,
   license: String,
-  imgUrl: String
+  color: String
 });
 
 module.exports = { Vehicle };

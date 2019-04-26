@@ -1,25 +1,21 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
+const ObjectId = mongoose.Types.ObjectId;
 const { VehicleModel } = require("../../mongo/models");
 
-// 1. create a function called getAll that returns everything
 const list = () => {
   return VehicleModel.find({});
 };
 
-// 2. create a function called createMovie that accepts a "movie" param
-const create = movie => {
-  return VehicleModel.create(movie);
+const create = vehicle => {
+  return VehicleModel.create(vehicle);
 };
 
-// 3. create a function called deleteMovie that accepts a "movieName" param
-const remove = movieName => {
-  return VehicleModel.deleteOne({ movieName });
+const remove = id => {
+  return VehicleModel.deleteOne(ObjectId(id));
 };
 
-// 4. create a function called getById that accepts an "id" param and finds one ticket
-// hint: in your db query, you will use objectId like this: ObjectId(id)
 const show = id => {
-  return VehicleModel.findById();
+  return VehicleModel.findById(ObjectId(id));
 };
 
-module.exports = { getAll, createMovie, deleteMovie, getById };
+module.exports = { list, create, remove, show };
