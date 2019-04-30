@@ -1,14 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
+import VehicleItem from "./VehicleItem";
 
-export default function ListOfVehicles(props) {
-  console.log(props.vehicles);
-  //   return ({props.vehicles.map(vehicle => (
-  //       <h1>{vehicle.make} {vehicle.model} color: {vehicle.color}</h1>
-  //   ))})
-  return <div>test</div>;
-}
+const ListOfVehicles = props => (
+  <ul>
+    {props.vehicles.map((vehicle, i) => (
+      <VehicleItem vehicle={vehicle} key={i} />
+    ))}
+  </ul>
+);
 
 ListOfVehicles.PropTypes = {
   vehicles: PropTypes.array
 };
+
+export default ListOfVehicles;

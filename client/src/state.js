@@ -3,7 +3,9 @@ export default {
     {
       make: "Honda",
       model: "Civic",
-      color: "grey"
+      color: "grey",
+      type: "car",
+      license: "168ZXZ"
     }
   ]
 };
