@@ -1,13 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import VehicleItem from "./VehicleItem";
+import VehicleItemContainer from "../containers/VehicleItemContainer";
 
 const ListOfVehicles = props => (
-  <ul>
-    {props.vehicles.map((vehicle, i) => (
-      <VehicleItem vehicle={vehicle} key={i} />
-    ))}
-  </ul>
+  <div>
+    <h2>Vehicles:</h2>
+    <ul>
+      {props.vehicles.map(vehicle => (
+        <VehicleItemContainer key={vehicle._id} />
+      ))}
+    </ul>
+  </div>
 );
 
 ListOfVehicles.PropTypes = {

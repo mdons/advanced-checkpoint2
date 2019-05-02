@@ -3,7 +3,7 @@ const router = express.Router();
 const VehiclesController = require("../controllers/vehicles");
 
 router.get("/", (req, res) => {
-  VehiclesController.list().then(results => res.json(results));
+  VehiclesController.list().then(result => res.json(result));
 });
 
 router.post("/", (req, res) => {
@@ -11,7 +11,7 @@ router.post("/", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
-  VehiclesController.remove(req.params.id).then(() => res.json({}));
+  VehiclesController.remove(req.params.id).then(result => res.json(result));
 });
 
 router.get("/:id", (req, res) => {

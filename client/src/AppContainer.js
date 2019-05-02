@@ -3,8 +3,10 @@ import "./App.css";
 import { connect } from "react-redux";
 
 function mapDispatchToProps(dispatch) {
-  return {
-  };
+  return {};
 }
 
-export default connect(null,mapDispatchToProps)(App);
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);

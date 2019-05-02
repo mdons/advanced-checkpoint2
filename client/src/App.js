@@ -1,21 +1,20 @@
 import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import ListOfVehicles from "./components/ListOfVehicles";
-import InputPanel from "./components/InputPanel";
-import state from "./state";
+import VehicleDetails from "./components/VehicleDetails";
+import HomeContainer from "./containers/HomeContainer";
+import NotFound from "./components/NotFound";
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-  // componentDidMount() {}
   render() {
     return (
-      <div>
-        <InputPanel />
-        <ListOfVehicles vehicles={state.vehicles} />;
-      </div>
+      <Switch>
+        <Route exact path="/" component={HomeContainer} />
+        <Route path="/vehicles:id" component={VehicleDetails} />
+        <Route component={NotFound} />
+      </Switch>
     );
   }
 }
+
 export default App;
